@@ -1,0 +1,4 @@
+create or replace package pkgOne is
+    function prnt_string return varchar2;
+    procedure proc_One (f_name varchar2, l_name varchar2);
+end pkgOne;

@@ -1,0 +1,9 @@
+create or replace package body incrProce is
+    
+    procedure heythere is
+    begin
+        counter := counter +1;
+
+        dbms_output.put_line('Hey there procedure' || counter);
+    end heythere;
+end incrProce;

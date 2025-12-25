@@ -1,0 +1,5 @@
+create or replace package conStore is
+    consOne constant number(7,3) := 73.910;
+
+    procedure printCons;
+end conStore;

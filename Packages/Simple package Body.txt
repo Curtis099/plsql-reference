@@ -1,0 +1,12 @@
+create or replace package body pkgOne is
+    function prnt_string return varchar2 is
+    begin
+        return 'This is function calling from a procedure';
+    end prnt_string;
+
+    procedure proc_One(f_name varchar2, l_name varchar2) is
+        begin
+            update employees set first_name = f_name, last_name = l_name where employee_id = '101';
+            dbms_output.put_line('This is function calling from a procedure');
+        end;
+end pkgOne;

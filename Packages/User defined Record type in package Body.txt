@@ -1,0 +1,16 @@
+create or replace package body disDet is
+    
+    type userRecord is record (
+        f_name employees.first_name%type,
+        l_name employees.last_name%type
+    );
+
+    typeP userRecord;
+
+    procedure recordDisplay is
+
+    begin
+        select first_name, last_name into typeP.f_name, typeP.l_name from employees where employee_id = '111';
+        dbms_output.put_line(typeP.f_name || ' ' || typeP.l_name);
+    end recordDisplay;
+end disDet;

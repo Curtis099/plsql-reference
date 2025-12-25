@@ -1,0 +1,7 @@
+create or replace package body conStore is
+    
+    procedure printCons is
+    begin
+        dbms_output.put_line(consOne);
+    end printCons;
+end;
