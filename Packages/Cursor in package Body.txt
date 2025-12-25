@@ -1,0 +1,21 @@
+create or replace package body curIntro is
+    
+    cursor cur_A is
+        select first_name, last_name from employees where rownum < 200;
+
+    procedure displayNames is
+
+        f_name employees.first_name%type;
+        l_name employees.last_name%type;
+
+        begin
+            open cur_A;
+
+            loop
+                fetch cur_A into f_name, l_name;
+                exit when cur_A%notfound;
+
+                dbms_output.put_line(f_name || ' ' || l_name);
+            end loop;
+        end displayNames;
+end curIntro;
